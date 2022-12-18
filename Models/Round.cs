@@ -4,6 +4,8 @@ namespace web_api.Models;
 
 public class Round
 {
+    public int Id { get; set; }
+    
     public string Name { get; set; }
     public DateTime StartDate { get; set; }
     public Event Event { get; set; }
