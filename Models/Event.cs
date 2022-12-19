@@ -5,8 +5,12 @@ namespace web_api.Models;
 public class Event
 {
     public int Id { get; set; }
-    public string Name { get; set; }
+    public string? Name { get; set; }
+    
+    [Column("team_size")]
     public int TeamSize { get; set; }
+    
+    [Column("playing_team_size")]
     public int PlayingTeamSize { get; set; }
     
     [Column("entry_fee")]
@@ -16,10 +20,10 @@ public class Event
     public int LowerRankLimit { get; set; }
     
     [Column("upper_rank_limit")]
-    public int UpperRankLimit { get; set; }
+    public int? UpperRankLimit { get; set; }
     
     [Column("challonge_id")]
-    public int ChallongeId { get; set; }
+    public string? ChallongeId { get; set; }
     
     // [Column("game_id")]
     // public Game Game { get; set; }
