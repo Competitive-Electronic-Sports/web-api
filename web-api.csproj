@@ -1,10 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>web_api</RootNamespace>
+    <UserSecretsId>1d14f8b5-f826-4f89-a520-d5675f216b79</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
