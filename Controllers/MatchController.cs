@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using web_api.Data;
 
 namespace web_api.Controllers;
 
@@ -6,5 +7,10 @@ namespace web_api.Controllers;
 [Route("[controller]")]
 public class MatchController : ControllerBase
 {
+    private readonly CESGamingContext _context;
     
+    public MatchController(CESGamingContext context)
+    {
+        _context = context;
+    }
 }

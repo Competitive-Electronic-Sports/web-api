@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using web_api.Data;
 using web_api.Models;
 
 namespace web_api.Controllers;
@@ -7,13 +8,16 @@ namespace web_api.Controllers;
 [Route("[controller]")]
 public class GameController : ControllerBase
 {
-    [HttpGet]
-    public Game Get()
+    private readonly CESGamingContext _context;
+    
+    public GameController(CESGamingContext context)
     {
-        return new Game
-        {
-            Id = 1,
-            Name = "Super Mario Bros",
-        };
+        _context = context;
+    }
+    
+    [HttpGet]
+    public IEnumerable<Game> Get()
+    {
+        return _context.Games;
     }
 }

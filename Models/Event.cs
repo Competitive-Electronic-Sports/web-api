@@ -25,8 +25,10 @@ public class Event
     [Column("challonge_id")]
     public string? ChallongeId { get; set; }
     
-    // [Column("game_id")]
-    // public Game Game { get; set; }
+    [Column("game_id")]
+    public int GameId { get; set; }
+    public Game Game { get; set; }
+    
     // public Organisation Organisation { get; set; }
     
     // public ICollection<Round> Rounds { get; set; }

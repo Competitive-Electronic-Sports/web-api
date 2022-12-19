@@ -12,7 +12,7 @@ public class CESGamingContext : DbContext
     }
     
     public DbSet<Event> Events { get; set; }
-    // public DbSet<Game> Games { get; set; }
+    public DbSet<Game> Games { get; set; }
     // public DbSet<Map> Maps { get; set; }
     // public DbSet<Match> Matches { get; set; }
     // public DbSet<Organisation> Organisations { get; set; }
@@ -30,5 +30,11 @@ public class CESGamingContext : DbContext
             .HasKey(t => new { t.TeamId, t.PlayerId });
 
         modelBuilder.Entity<Event>().ToTable("event");
+        modelBuilder.Entity<Event>().HasOne(e => e.Game)
+            .WithMany(g => g.Events)
+            .HasForeignKey(e => e.GameId);
+
+        modelBuilder.Entity<Game>().ToTable("game");
+        modelBuilder.Entity<Game>().Property(g => g.Id).HasColumnName("id");
     }
 }
